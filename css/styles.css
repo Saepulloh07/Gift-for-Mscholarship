@@ -206,10 +206,11 @@ body, html {
     .registration {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Memusatkan secara horizontal */
-        justify-content: center; /* Memusatkan secara vertikal */
-        margin-top: 20px; /* Sesuaikan margin atas jika diperlukan */
-        padding-right: 0; /* Hapus padding kanan pada tampilan mobile */
+        align-items: flex-start; /* Memindahkan elemen sedikit ke kanan */
+        justify-content: center;
+        margin-top: 20px;
+        padding-right: 0;
+        padding-left: 30px; /* Tambahkan padding kiri untuk menggeser elemen ke kanan */
     }
 
     .register-btn {
