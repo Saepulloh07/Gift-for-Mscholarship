@@ -161,42 +161,34 @@ body, html {
 
 @media (max-width: 768px) {
     .content {
-        flex-direction: column;
+        justify-content: center; /* Tambahkan ini untuk meratakan konten secara vertikal di tengah */
         text-align: center;
-        padding: 160px 0px 20px 50px 20px;
+        padding: 160px 20px; /* Sesuaikan padding untuk tata letak yang lebih baik */
     }
 
     .video-container {
-        position: static;
-        margin-top: 150px;
+        position: absolute;
+        top: 50px; /* Geser video ke bawah di bawah navbar */
         width: 100%;
-        height: auto;
+        height: calc(100vh - 50px); /* Pastikan tinggi video mencakup area yang diinginkan */
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 1; /* Pastikan video berada di atas */
-        transform: translateX(2%)
+        z-index: 1;
+        transform: translateX(0); /* Sesuaikan untuk tampilan mobile */
     }
 
     #background-video {
         width: 100%;
-        height: auto; /* Video otomatis menyesuaikan ketinggian */
+        height: 100%;
         object-fit: cover;
         max-height: 50vh; /* Batas tinggi maksimal video adalah setengah dari viewport */
     }
 
-    .logo-container {
-        justify-content: center;
-    }
-
-    .logo-container .logo {
-        height: 70px;
-    }
-
     .text-content {
         align-items: center;
-        padding-top: 100px;
-        padding-right: 0px;
+        padding-top: 0; /* Hapus padding atas untuk meratakan konten vertikal */
+        padding-right: 0;
     }
 
     .text-content h2 {
