@@ -169,18 +169,16 @@ body, html {
     }
 
     /* Show footer only on mobile */
-    .mobile-footer {
-        display: block;
-        position: absolute; /* Use absolute positioning */
+    footer.mobile-footer {
+        position: relative; /* Changed to relative */
         bottom: 0;
-        left: 0;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.7);
         color: white;
         text-align: center;
         padding: 10px;
         font-size: 14px;
-        z-index: 2; /* Ensure footer is below button */
+        z-index: 2; /* Ensure footer is above content */
     }
 }
 
