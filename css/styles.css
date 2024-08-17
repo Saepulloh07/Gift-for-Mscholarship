@@ -122,7 +122,7 @@ body, html {
     .image-container, .background-gif {
         width: 100%;
         height: auto;
-        margin-left: 30px; /* Geser gambar ke sebelah kiri dengan margin */
+        margin-left: 0px; /* Geser gambar ke sebelah kiri dengan margin */
     }
 
     .content {
