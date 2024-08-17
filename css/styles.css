@@ -146,7 +146,7 @@ body, html {
     }
 
         .image-container {
-        margin-left: -100px; /* Shift the GIF to the left by 10px on mobile */
+        margin-left: -50px; /* Shift the GIF to the left by 10px on mobile */
     }
 
 }
