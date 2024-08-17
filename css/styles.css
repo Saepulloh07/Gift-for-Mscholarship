@@ -122,7 +122,6 @@ body, html {
 @media (max-width: 768px) {
     .main-content {
         flex-direction: column;
-        margin-bottom: 80px; /* Tetap mempertahankan margin-bottom */
         padding-bottom: 60px; /* Memberikan ruang untuk footer */
     }
 
