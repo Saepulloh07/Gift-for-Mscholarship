@@ -122,7 +122,8 @@ body, html {
 @media (max-width: 768px) {
     .main-content {
         flex-direction: column;
-        margin-bottom: 80px; /* Adjust space for footer */
+        margin-bottom: 80px; /* Tetap mempertahankan margin-bottom */
+        padding-bottom: 60px; /* Memberikan ruang untuk footer */
     }
 
     .video-container {
@@ -168,17 +169,18 @@ body, html {
         animation: slideDown 1.5s ease-out;
     }
 
-    /* Show footer only on mobile */
-    footer.mobile-footer {
-        position: relative; /* Changed to relative */
+    .mobile-footer {
+        display: block;
+        position: fixed; /* Ubah ke fixed agar selalu di bawah */
         bottom: 0;
+        left: 0;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.7);
         color: white;
         text-align: center;
         padding: 10px;
         font-size: 14px;
-        z-index: 2; /* Ensure footer is above content */
+        z-index: 2;
     }
 }
 
