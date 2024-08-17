@@ -10,7 +10,6 @@ body, html {
 }
 
 .navbar {
-    z-index: 4; /* Navbar should be on top */
     border-bottom: 2px solid #fff;
     animation: slideDown 1.5s ease-out;
 }
