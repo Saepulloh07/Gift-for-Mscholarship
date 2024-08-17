@@ -145,6 +145,7 @@ body, html {
         margin-top: 100px; /* Push content down further */
         margin-bottom: 60px; /* Ensure content is not overlapped by the footer */
         margin-top: 200px; /* Push content down further on mobile */
+        padding-top: 240px; /* Increase padding-top for mobile to ensure the text is below the video */
     }
 
     .text-content h2, .text-content h3 {
