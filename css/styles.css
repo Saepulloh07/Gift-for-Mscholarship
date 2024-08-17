@@ -142,10 +142,9 @@ body, html {
         width: 100%;
         text-align: center;
         animation: fadeIn 2s ease-out;
-        margin-top: 100px; /* Push content down further */
-        margin-bottom: 60px; /* Ensure content is not overlapped by the footer */
-        margin-top: 200px; /* Push content down further on mobile */
-        padding-top: 240px; /* Increase padding-top for mobile to ensure the text is below the video */
+        margin-top: 10px; /* Less margin for smaller screens */
+        padding-top: 50px; /* Ensure some padding from the top without overwhelming the layout */
+        padding-bottom: 20px; /* Add bottom padding for spacing */
     }
 
     .text-content h2, .text-content h3 {
