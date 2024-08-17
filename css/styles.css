@@ -163,7 +163,7 @@ body, html {
     .content {
         justify-content: center; /* Tambahkan ini untuk meratakan konten secara vertikal di tengah */
         text-align: center;
-        padding: 160px 20px; /* Sesuaikan padding untuk tata letak yang lebih baik */
+        padding: 300px 160px 20px; /* Sesuaikan padding untuk tata letak yang lebih baik */
     }
 
     .video-container {
@@ -187,7 +187,7 @@ body, html {
 
     .text-content {
         align-items: center;
-        padding-top: 0; /* Hapus padding atas untuk meratakan konten vertikal */
+        padding-top: 20px; /* Sesuaikan padding atas untuk memposisikan tulisan di bawah video */
         padding-right: 0;
     }
 
