@@ -10,10 +10,11 @@ body, html {
 }
 
 .navbar {
-    z-index: 3;
+    z-index: 4; /* Navbar should be on top */
     border-bottom: 2px solid #fff;
     animation: slideDown 1.5s ease-out;
 }
+
 
 .logo {
     height: 60px;
@@ -133,7 +134,15 @@ body, html {
 
     .video-container {
         width: 100%;
-        height: 50vh; /* Adjust the height for mobile */
+        height: auto; /* Adjust the height for mobile */
+        z-index: 2; /* Make sure it's above the content */
+    }
+
+    #background-video {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        z-index: 2; /* Ensure video is above the content */
     }
 
     .content {
@@ -142,6 +151,7 @@ body, html {
         text-align: center;
         animation: fadeIn 2s ease-out;
         margin-bottom: 60px; /* Ensure content is not overlapped by the footer */
+        z-index: 3; /* Content is above the video */
     }
 
     .text-content h2, .text-content h3 {
@@ -157,6 +167,7 @@ body, html {
         padding: 8px 15px;
     }
 }
+
 
 .mobile-footer {
     position: relative;
