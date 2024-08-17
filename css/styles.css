@@ -168,14 +168,13 @@ body, html {
 
     .video-container {
         position: absolute;
-        top: 50px; /* Geser video ke bawah di bawah navbar */
+        top: 0;
         width: 100%;
-        height: calc(100vh - 50px); /* Pastikan tinggi video mencakup area yang diinginkan */
+        height: 50vh; /* Batas tinggi video */
+        z-index: 1;
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 1;
-        transform: translateX(0); /* Sesuaikan untuk tampilan mobile */
     }
 
     #background-video {
@@ -186,8 +185,9 @@ body, html {
     }
 
     .text-content {
+        margin-top: 60vh; /* Geser tulisan ke bawah */
         align-items: center;
-        padding-top: 20px; /* Sesuaikan padding atas untuk memposisikan tulisan di bawah video */
+        padding-left: 0; 
         padding-right: 0;
     }
 
