@@ -36,13 +36,12 @@ body, html {
 
 .background-gif {
     width: auto;
-    height: 100vh; 
+    height: 100vh; /* Set height to 100% of the viewport height */
     object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
-    transform: scale(1.4); /* Increase the scale value to enlarge the GIF */
 }
 
 .content {
