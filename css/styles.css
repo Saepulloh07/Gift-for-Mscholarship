@@ -170,7 +170,7 @@ body, html {
         position: absolute;
         top: 0;
         width: 100%;
-        height: 40vh; /* Batas tinggi video lebih kecil */
+        height: 50vh; /* Batas tinggi video */
         z-index: 1;
         display: flex;
         justify-content: center;
@@ -181,16 +181,15 @@ body, html {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        max-height: 40vh; /* Batas tinggi maksimal video */
+        max-height: 50vh; /* Batas tinggi maksimal video adalah setengah dari viewport */
     }
 
     .text-content {
-        margin-top: 50vh; /* Geser tulisan ke bawah */
+        margin-top: 60vh; /* Geser tulisan ke bawah */
         align-items: center;
         padding-left: 0; 
         padding-right: 0;
     }
-
 
     .text-content h2 {
         font-size: 24px;
