@@ -194,6 +194,7 @@ body, html {
 
     .text-content {
         align-items: center;
+        padding-top: 100px;
     }
 
     .text-content h2 {
