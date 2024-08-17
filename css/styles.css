@@ -1,57 +1,55 @@
+/* Base Styles */
 body, html {
-    margin-top: 30px;
+    margin: 0;
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #ff0000; /* Background merah */
+    background-color: #ff0000;
     color: white;
     overflow-x: hidden;
-    margin-bottom: 60px;
 }
 
+/* Navbar */
 .navbar {
-    z-index: 4; /* Navbar should be on top */
+    z-index: 3;
     border-bottom: 2px solid #fff;
     animation: slideDown 1.5s ease-out;
 }
 
-
-.logo {
-    height: 60px;
-    width: auto;
-    animation: fadeIn 2s ease-out, bounceIn 2s ease-in-out infinite alternate;
-}
-
-.main-content {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-}
-
+/* Video Container */
 .video-container {
-    width: 50%;
-    height: 100%;
-    z-index: 1; /* Tetap berada di bawah konten dan tombol */
+    width: 100%;
+    height: auto;
     position: relative;
+    z-index: 1;
 }
 
 #background-video {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
-    z-index: 1; /* Pastikan video berada di belakang konten lain */
+    z-index: 1;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 }
 
 .content {
-    width: 50%;
+    width: 100%;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    z-index: 2; /* Pastikan konten berada di atas video dan kontrol musik */
+    z-index: 2;
+    background: rgba(255, 0, 0, 0.8); /* Semi-transparent background to ensure readability */
     animation: fadeInLeft 2s ease-out;
 }
 
@@ -83,7 +81,7 @@ body, html {
     font-weight: bold;
     border-radius: 5px;
     margin-top: 10px;
-    animation: pulsate 1.5s infinite; /* Infinite loop animation */
+    animation: pulsate 1.5s infinite;
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
@@ -92,6 +90,7 @@ body, html {
     transform: scale(1.05);
 }
 
+/* Music Control */
 #music-control {
     position: fixed;
     bottom: 20px;
@@ -105,7 +104,7 @@ body, html {
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: background 0.3s ease;
-    z-index: 4; /* Naikkan z-index */
+    z-index: 4;
     animation: bounce 2s infinite;
 }
 
@@ -113,6 +112,7 @@ body, html {
     background: rgba(255, 255, 255, 0.7);
 }
 
+/* Mobile Footer */
 .mobile-footer {
     position: relative;
     bottom: 0;
@@ -123,35 +123,26 @@ body, html {
     text-align: center;
     padding: 10px;
     font-size: 14px;
+    z-index: 3;
 }
 
-
+/* Mobile Styles */
 @media (max-width: 768px) {
     .main-content {
         flex-direction: column;
-        margin-bottom: 60px; /* Ensure content is not overlapped by the footer */
     }
 
     .video-container {
         width: 100%;
-        height: auto; /* Adjust the height for mobile */
-        z-index: 2; /* Make sure it's above the content */
-    }
-
-    #background-video {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        z-index: 2; /* Ensure video is above the content */
+        height: 50vh; /* Adjust the height for mobile */
     }
 
     .content {
         width: 100%;
-        padding-top: 100px;
         text-align: center;
         animation: fadeIn 2s ease-out;
+        margin-top: 20px;
         margin-bottom: 60px; /* Ensure content is not overlapped by the footer */
-        z-index: 3; /* Content is above the video */
     }
 
     .text-content h2, .text-content h3 {
@@ -159,7 +150,7 @@ body, html {
     }
 
     .text-content strong {
-        font-size: 46px;
+        font-size: 36px;
     }
 
     .register-btn {
@@ -168,33 +159,7 @@ body, html {
     }
 }
 
-
-.mobile-footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.418);
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-    z-index: 3;
-}
-
-/* Keyframes for Animations */
-@keyframes zoomInOut {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
-
-@keyframes moveButton {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(20px); }
-    100% { transform: translateX(0); }
-}
-
+/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -210,20 +175,9 @@ body, html {
     to { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-100px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 @keyframes slideUp {
     from { opacity: 0; transform: translateY(100px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
 }
 
 @keyframes pulseGlow {
@@ -235,19 +189,4 @@ body, html {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
     40% { transform: translateY(-20px); }
     60% { transform: translateY(-10px); }
-}
-
-@keyframes bounceIn {
-    from, 20%, 40%, 60%, 80%, to { transform: scale(1); }
-    20% { transform: scale(1.1); }
-    40% { transform: scale(0.9); }
-    60% { transform: scale(1.1); }
-    80% { transform: scale(0.95); }
-    to { transform: scale(1); }
-}
-
-@keyframes pulsate {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
 }
