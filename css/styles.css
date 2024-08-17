@@ -51,7 +51,7 @@ body, html {
     z-index: 2;
     background: rgba(255, 0, 0, 0.8); /* Semi-transparent background to ensure readability */
     animation: fadeInLeft 2s ease-out;
-    margin-top: 100px; /* Add more space from the top to push content further down */
+    margin-top: 200px; /* Add more space from the top to push content further down */
 }
 
 .text-content {
