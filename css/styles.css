@@ -9,40 +9,22 @@ body, html {
 }
 
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 10px 0;
     z-index: 3;
-    display: flex;
-    justify-content: center;
     border-bottom: 2px solid #fff;
 }
 
-.logo-container {
-    display: flex;
-    gap: 20px;
-}
-
-.logo-container .logo {
+.logo {
     height: 60px;
     width: auto;
     animation: fadeIn 2s ease-out;
 }
 
 .video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80%;
-    height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100vh;
     z-index: 1; /* Tetap berada di bawah konten dan tombol */
-    transform: translateX(-20%);
-    /* Hapus overflow: hidden jika tidak diperlukan */
 }
-
 
 #background-video {
     width: 100%;
@@ -77,51 +59,27 @@ body, html {
 .content {
     position: relative;
     z-index: 2; /* Pastikan konten berada di atas video dan kontrol musik */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    padding: 100px 20px 50px 20px;
-    text-align: right;
-    overflow-y: auto;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding-top: 400px; /* Tambahkan padding untuk menempatkan konten di bawah video */
 }
 
 .text-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding-right: 50px;
+    padding: 20px;
 }
 
-.text-content h2 {
-    font-size: 54px;
-    margin: 10px 0;
+.text-content h2, .text-content h3 {
     animation: fadeInUp 1.5s ease-out;
 }
 
-.text-content h3 {
-    font-size: 27px;
-    margin: 10px 0;
-    font-weight: normal;
-    animation: fadeInUp 1.8s ease-out;
-}
-
 .text-content strong {
-    font-size: 54px;
     color: #ffff00;
 }
 
 .registration {
     margin-top: 30px;
     animation: slideUp 2s ease;
-    padding-right: 50px;
 }
 
 .register-btn {
-    display: inline-block;
     padding: 10px 20px;
     background-color: white;
     color: red;
@@ -138,89 +96,33 @@ body, html {
     transform: scale(1.05);
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideUp {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
 @media (max-width: 768px) {
     .content {
-        justify-content: center; /* Tambahkan ini untuk meratakan konten secara vertikal di tengah */
+        padding-top: 100px;
         text-align: center;
-        padding: 300px 160px 20px; /* Sesuaikan padding untuk tata letak yang lebih baik */
     }
 
     .video-container {
-        position: absolute;
-        top: 50px;
+        position: relative;
+        top: 0;
         width: 100%;
-        height: calc(100vh - 50px);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1;
-        transform: translateX(0);
+        height: 50vh; /* Adjust the height for mobile */
     }
 
     #background-video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
         max-height: 50vh;
     }
 
-    .text-content {
-        align-items: center;
-        padding-top: 100px; /* Sesuaikan padding atas untuk memposisikan tulisan di bawah video */
-        padding-right: 0;
-    }
-
-    .text-content h2 {
+    .text-content h2, .text-content h3 {
         font-size: 24px;
-    }
-
-    .text-content h3 {
-        font-size: 12px;
     }
 
     .text-content strong {
-        font-size: 24px;
-    }
-
-    .registration {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Mengatur agar elemen berada di tengah */
-        justify-content: center;
-        margin-top: 50px;
-        padding-right: 0;
-        padding-left: 0; /* Hapus padding kiri */
+        font-size: 48px;
     }
 
     .register-btn {
         font-size: 14px;
         padding: 8px 15px;
-        margin-top: 10px; /* Jaga jarak antara tombol dan teks di atasnya */
-    }
-
-    .register-btn p {
-        font-size: 14px; /* Ukuran teks untuk tampilan mobile */
-        margin: 10px 0; /* Jaga jarak yang konsisten antara elemen */
     }
 }
