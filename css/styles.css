@@ -197,15 +197,15 @@ body, html {
     }
 
     .text-content h2 {
-        font-size: 48px;
-    }
-
-    .text-content h3 {
         font-size: 24px;
     }
 
+    .text-content h3 {
+        font-size: 12px;
+    }
+
     .text-content strong {
-        font-size: 48px;
+        font-size: 24px;
     }
 
     .register-btn {
