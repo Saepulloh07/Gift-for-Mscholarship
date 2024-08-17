@@ -129,29 +129,32 @@ body, html {
 @media (max-width: 768px) {
     .main-content {
         flex-direction: column;
-        margin-bottom: 60px; /* Ensure content is not overlapped by the footer */
+        margin-bottom: 60px;
+        position: relative; /* Add this to create a stacking context */
     }
 
     .video-container {
         width: 100%;
-        height: auto; /* Adjust the height for mobile */
-        z-index: 2; /* Make sure it's above the content */
+        height: 50vh; /* Set height to 50% of the viewport height */
+        position: fixed; /* Ensure the video stays visible while scrolling */
+        top: 0;
+        left: 0;
+        z-index: 1; /* Video should be behind the content */
     }
 
     #background-video {
         width: 100%;
-        height: auto;
+        height: 100%;
         object-fit: cover;
-        z-index: 2; /* Ensure video is above the content */
+        z-index: 1; /* Ensure video is behind the content */
     }
 
     .content {
         width: 100%;
-        padding-top: 100px;
+        padding-top: 50vh; /* Push content below the video */
         text-align: center;
-        animation: fadeIn 2s ease-out;
-        margin-bottom: 60px; /* Ensure content is not overlapped by the footer */
-        z-index: 3; /* Content is above the video */
+        position: relative;
+        z-index: 2; /* Content should be on top of the video */
     }
 
     .text-content h2, .text-content h3 {
@@ -166,7 +169,14 @@ body, html {
         font-size: 18px;
         padding: 8px 15px;
     }
+
+    .navbar {
+        z-index: 3; /* Navbar should be on top of the video */
+        border-bottom: 2px solid #fff;
+        animation: slideDown 1.5s ease-out;
+    }
 }
+
 
 
 .mobile-footer {
