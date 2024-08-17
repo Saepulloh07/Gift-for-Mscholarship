@@ -36,13 +36,15 @@ body, html {
 
 .background-gif {
     width: auto;
-    height: 100vh; /* Set height to 100% of the viewport height */
-    object-fit: cover;
+    height: 100vh; /* Ensure the GIF covers the full height of the viewport */
+    min-width: 100%; /* Ensure the GIF covers the width if height causes overflow */
+    object-fit: cover; /* Maintain aspect ratio and cover the element */
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
 }
+
 
 .content {
     width: 50%;
