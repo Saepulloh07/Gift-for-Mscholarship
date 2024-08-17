@@ -203,8 +203,23 @@ body, html {
         font-size: 24px;
     }
 
+    .registration {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Memusatkan secara horizontal */
+        justify-content: center; /* Memusatkan secara vertikal */
+        margin-top: 20px; /* Sesuaikan margin atas jika diperlukan */
+        padding-right: 0; /* Hapus padding kanan pada tampilan mobile */
+    }
+
     .register-btn {
         font-size: 14px;
         padding: 8px 15px;
+        margin-top: 10px; /* Jaga jarak antara tombol dan teks di atasnya */
+    }
+
+    .register-btn p {
+        font-size: 14px; /* Ukuran teks untuk tampilan mobile */
+        margin: 10px 0; /* Jaga jarak yang konsisten antara elemen */
     }
 }
