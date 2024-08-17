@@ -1,29 +1,37 @@
 body, html {
-    margin: 0;
+    margin-top: 30px;
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
     background-color: #ff0000; /* Background merah */
     color: white;
     overflow-x: hidden;
+    margin-bottom: 60px;
 }
 
 .navbar {
     z-index: 3;
     border-bottom: 2px solid #fff;
+    animation: slideDown 1.5s ease-out;
 }
 
 .logo {
     height: 60px;
     width: auto;
-    animation: fadeIn 2s ease-out;
+    animation: fadeIn 2s ease-out, bounceIn 2s ease-in-out infinite alternate;
+}
+
+.main-content {
+    display: flex;
+    height: 100vh;
+    width: 100%;
 }
 
 .video-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
+    width: 50%;
+    height: 100%;
     z-index: 1; /* Tetap berada di bawah konten dan tombol */
+    position: relative;
 }
 
 #background-video {
@@ -34,6 +42,53 @@ body, html {
     top: 0;
     left: 0;
     z-index: 1; /* Pastikan video berada di belakang konten lain */
+}
+
+.content {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2; /* Pastikan konten berada di atas video dan kontrol musik */
+    animation: fadeInLeft 2s ease-out;
+}
+
+.text-content {
+    padding: 20px;
+}
+
+.text-content h2, .text-content h3 {
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.text-content strong {
+    color: #ffff00;
+    animation: pulseGlow 3s infinite alternate;
+}
+
+.registration {
+    margin-top: 30px;
+    animation: slideUp 2s ease;
+    padding-right: 30px;
+    padding-top: 20px;
+}
+
+.register-btn {
+    padding: 10px 20px;
+    background-color: white;
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+    animation: pulsate 1.5s infinite; /* Infinite loop animation */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.register-btn:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
 }
 
 #music-control {
@@ -50,67 +105,43 @@ body, html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: background 0.3s ease;
     z-index: 4; /* Naikkan z-index */
+    animation: bounce 2s infinite;
 }
 
 #music-control:hover {
     background: rgba(255, 255, 255, 0.7);
 }
 
-.content {
+.mobile-footer {
     position: relative;
-    z-index: 2; /* Pastikan konten berada di atas video dan kontrol musik */
-    padding-top: 400px; /* Tambahkan padding untuk menempatkan konten di bawah video */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
 }
 
-.text-content {
-    padding: 20px;
-}
-
-.text-content h2, .text-content h3 {
-    animation: fadeInUp 1.5s ease-out;
-}
-
-.text-content strong {
-    color: #ffff00;
-}
-
-.registration {
-    margin-top: 30px;
-    animation: slideUp 2s ease;
-}
-
-.register-btn {
-    padding: 10px 20px;
-    background-color: white;
-    color: red;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-top: 10px;
-    animation: pulse 2s infinite;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.register-btn:hover {
-    background-color: #f0f0f0;
-    transform: scale(1.05);
-}
 
 @media (max-width: 768px) {
-    .content {
-        padding-top: 100px;
-        text-align: center;
+    .main-content {
+        flex-direction: column;
+        margin-bottom: 60px; /* Ensure content is not overlapped by the footer */
     }
 
     .video-container {
-        position: relative;
-        top: 0;
         width: 100%;
         height: 50vh; /* Adjust the height for mobile */
     }
 
-    #background-video {
-        max-height: 50vh;
+    .content {
+        width: 100%;
+        padding-top: 100px;
+        text-align: center;
+        animation: fadeIn 2s ease-out;
+        margin-bottom: 60px; /* Ensure content is not overlapped by the footer */
     }
 
     .text-content h2, .text-content h3 {
@@ -118,11 +149,94 @@ body, html {
     }
 
     .text-content strong {
-        font-size: 48px;
+        font-size: 46px;
     }
 
     .register-btn {
-        font-size: 14px;
+        font-size: 18px;
         padding: 8px 15px;
     }
+}
+
+.mobile-footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.418);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    z-index: 3;
+}
+
+/* Keyframes for Animations */
+@keyframes zoomInOut {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes moveButton {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-100px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(100px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulseGlow {
+    0% { text-shadow: 0 0 5px #ffff00; }
+    100% { text-shadow: 0 0 20px #ffff00; }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+}
+
+@keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to { transform: scale(1); }
+    20% { transform: scale(1.1); }
+    40% { transform: scale(0.9); }
+    60% { transform: scale(1.1); }
+    80% { transform: scale(0.95); }
+    to { transform: scale(1); }
+}
+
+@keyframes pulsate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
