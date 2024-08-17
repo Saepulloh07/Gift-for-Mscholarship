@@ -3,7 +3,7 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #ff0000; /* Background merah */
+    background-color: #cf1515; /* Background merah */
     color: white;
     overflow-x: hidden;
     margin-bottom: 60px;
@@ -128,7 +128,7 @@ body, html {
 @media (max-width: 768px) {
     .main-content {
         flex-direction: column;
-        margin-bottom: 60px; /* Ensure content is not overlapped by the footer */
+        margin-bottom: 100px; /* Ensure content is not overlapped by the footer */
     }
 
     .video-container {
@@ -149,7 +149,7 @@ body, html {
         padding-top: 100px;
         text-align: center;
         animation: fadeIn 2s ease-out;
-        margin-bottom: 60px; /* Ensure content is not overlapped by the footer */
+        margin-bottom: 100px; /* Ensure content is not overlapped by the footer */
         z-index: 3; /* Content is above the video */
     }
 
