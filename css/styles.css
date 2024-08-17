@@ -210,7 +210,7 @@ body, html {
         justify-content: center;
         margin-top: 20px;
         padding-right: 0;
-        padding-left: 30px; /* Tambahkan padding kiri untuk menggeser elemen ke kanan */
+        padding-left: 70px; /* Tambahkan padding kiri untuk menggeser elemen ke kanan */
     }
 
     .register-btn {
